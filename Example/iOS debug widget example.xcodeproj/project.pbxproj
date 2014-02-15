@@ -18,6 +18,7 @@
 		9E32396D18AF786B006DDA47 /* SMKSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E32396C18AF786B006DDA47 /* SMKSecondViewController.m */; };
 		9E32396F18AF786B006DDA47 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E32396E18AF786B006DDA47 /* Images.xcassets */; };
 		9E32399118AF794A006DDA47 /* SMKDebugWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E32399018AF794A006DDA47 /* SMKDebugWidget.m */; };
+		9E32399318AF8134006DDA47 /* SMKDebugWidget.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E32399218AF8134006DDA47 /* SMKDebugWidget.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		9E32397518AF786B006DDA47 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		9E32398F18AF794A006DDA47 /* SMKDebugWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMKDebugWidget.h; path = "../../iOS-debug-widget/SMKDebugWidget.h"; sourceTree = "<group>"; };
 		9E32399018AF794A006DDA47 /* SMKDebugWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMKDebugWidget.m; path = "../../iOS-debug-widget/SMKDebugWidget.m"; sourceTree = "<group>"; };
+		9E32399218AF8134006DDA47 /* SMKDebugWidget.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SMKDebugWidget.xib; path = "../../iOS-debug-widget/SMKDebugWidget.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			children = (
 				9E32398F18AF794A006DDA47 /* SMKDebugWidget.h */,
 				9E32399018AF794A006DDA47 /* SMKDebugWidget.m */,
+				9E32399218AF8134006DDA47 /* SMKDebugWidget.xib */,
 			);
 			name = "iOS debug widget";
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E32396F18AF786B006DDA47 /* Images.xcassets in Resources */,
+				9E32399318AF8134006DDA47 /* SMKDebugWidget.xib in Resources */,
 				9E32395E18AF786B006DDA47 /* InfoPlist.strings in Resources */,
 				9E32396718AF786B006DDA47 /* Main.storyboard in Resources */,
 			);

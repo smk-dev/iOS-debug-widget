@@ -13,6 +13,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // add widget
+    [SMKDebugWidget addToWindow:self.window];
+    
     // Override point for customization after application launch.
     return YES;
 }
