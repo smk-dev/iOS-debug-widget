@@ -7,12 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#define NSLog(...) SMKLog(__VA_ARGS__); //Direct calls to NSLog to our logging method
 
-@interface SMKDebugWidget : UIView
+@interface SMKDebugWidget : UIView {
+    bool enableNSLogging;
+    UITextView* loggingView; //Logs are printed to here
+}
 
 // class methods
 + (SMKDebugWidget *)addToWindow:(UIWindow *)window;
 + (SMKDebugWidget *)addToMainWindow;
+- (void)writeToLog:(NSString*)newLine;
+- (void)enableLogging;
+
+void SMKLog(NSString *format, ...);
 
 @end
 

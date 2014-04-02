@@ -7,6 +7,7 @@
 //
 
 #import "SMKFirstViewController.h"
+#import "SMKDebugWidget.h" //Add this to views that wish to displat NSLogs in widget
 
 @interface SMKFirstViewController ()
 
@@ -18,6 +19,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    NSLog(@"This is log test One!");
+    NSLog(@"This is log test Two!");
+    NSLog(@"Log me too!");
 }
 
 - (void)didReceiveMemoryWarning
