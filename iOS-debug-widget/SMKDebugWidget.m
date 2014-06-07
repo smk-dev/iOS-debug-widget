@@ -8,6 +8,7 @@
 
 #import "SMKDebugWidget.h"
 #import <QuartzCore/QuartzCore.h>
+#define SMKLogBorderSize 20
 
 @interface SMKDebugWidget ()
 
@@ -17,6 +18,36 @@
 @end
 
 @implementation SMKDebugWidget
+
+#pragma mark - Logging
+
+static SMKDebugWidget *cSelfRef; //reference of self for the C method to call on
+
+void SMKLog(NSString *format, ...) {
+    va_list argumentList;
+    va_start(argumentList, format);
+    NSMutableString * message = [[NSMutableString alloc] initWithFormat:format arguments:argumentList];
+    
+    //Output message into our console
+    [cSelfRef writeToLog:message];
+    
+    NSLogv(message, argumentList);
+    va_end(argumentList);
+}
+
+- (void)writeToLog:(NSString*)newLine{
+    if(enableNSLogging)
+    {
+        loggingView.text = [loggingView.text stringByAppendingString:[NSString stringWithFormat:@" - %@\n",newLine]];
+        [loggingView scrollRangeToVisible:NSMakeRange([loggingView.text length], 0)]; //Scroll to bottom
+    }
+}
+
+- (void)enableLogging {
+    enableNSLogging = true;
+    cSelfRef = self;
+    [self setupLogging];
+}
 
 #pragma mark - Lifecycle
 
@@ -29,6 +60,16 @@
     
     // watch for orientation changes
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationDidChangeNotification:) name:UIDeviceOrientationDidChangeNotification object:nil];
+}
+
+- (void)setupLogging {
+    loggingView = [[UITextView alloc]initWithFrame:CGRectMake((SMKLogBorderSize/2), (SMKLogBorderSize/2), self.frame.size.width-SMKLogBorderSize, self.frame.size.height-SMKLogBorderSize) ]; //Put in the center of our area
+    
+    //Log Style
+    [loggingView setBackgroundColor:[UIColor lightGrayColor]];
+    [loggingView setTextColor:[UIColor blueColor]];
+    
+    [self addSubview:loggingView];
 }
 
 - (void)dealloc {

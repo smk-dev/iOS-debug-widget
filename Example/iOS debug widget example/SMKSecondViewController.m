@@ -7,6 +7,7 @@
 //
 
 #import "SMKSecondViewController.h"
+#import "SMKDebugWidget.h"
 
 @interface SMKSecondViewController ()
 
