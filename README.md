@@ -15,3 +15,5 @@ How to use
 3.Call [SMKDebugWidget addToWindow:self.window] from within 'didFinishLaunchingWithOptions' (Optionaly call [SMKDebug enableLogging], see demo)
 
 4.(Optional) import 'SMKDebugWidget.h' into classes where you would like NSLogs to display in widget
+
+5.Set Preprocessors macro DEBUG=1 (debug widget should work only on debug version of app - not in production)
